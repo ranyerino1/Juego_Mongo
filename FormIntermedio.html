@@ -12,7 +12,7 @@
 
     <h1>NIVEL INTERMEDIO</h1>
 
-    <p>En este nivel aprenderas a usar actualizaciones y consultas por datos en especifico.</p>
+    <p>En este nivel aprenderas a usar actualizaciones, eliminaciones y consultas por datos en especifico.</p>
 
     <div class="">
 
@@ -20,44 +20,49 @@
             hacer es especificar el dato a usar, si queremos consultar todas las peliculas cuyo autor sea Michael Bay
             como lo hariamos.</label>
         <select name="res1" id="res1">
-            <option value="1">Accion.find({ nombre:"Michael Bay" })</option>
-            <option value="2">find({ nombre:"Michael Bay" })</option>
-            <option value="3">db.Accion.find({ nombre:"Michael Bay" })</option>
-            <option value="4">db.find({ nombre:"Michael Bay" })</option>
+            <option value="1">Accion.find({ autor:"Michael Bay" })</option>
+            <option value="2">find({ autor:"Michael Bay" })</option>
+            <option value="3">db.Accion.find({ autor:"Michael Bay" })</option>
+            <option value="4">db.find({ autor:"Michael Bay" })</option>
         </select>
 
         <label for="">Para ver los dcoumentos ordenados basta con usar el metodo .pretty(), si deseamos ver la anterior
             consulta ordenada que debemos agregar.</label>
         <select name="res2" id="res2">
-            <option value="1">Accion.find({ nombre:"Michael Bay" }).pertty</option>
-            <option value="2">db.Accion.find({ nombre:"Michael Bay" }).pretty()</option>
-            <option value="3">db.Accion.find({ nombre:"Michael Bay" })</option>
-            <option value="4">db.find({ nombre:"Michael Bay" }).pretty()</option>
+            <option value="1">Accion.find({ autor:"Michael Bay" }).pertty</option>
+            <option value="2">db.Accion.find({ autor:"Michael Bay" }).pretty()</option>
+            <option value="3">db.Accion.find({ autor:"Michael Bay" })</option>
+            <option value="4">db.find({ autor:"Michael Bay" }).pretty()</option>
         </select>
 
-        <label for=""></label>
+        <label for="">Para realizar una eliminación basta con usar deleteOne y buscar un dato especifico, elimina el
+            documento que cumpla con la condición de _id':ObjectId("6168e897b7fbfc75868973ea")
+        </label>
         <select name="res3" id="res3">
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
+            <option value="1">deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+            <option value="2">db.Drop({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+            <option value="3">db.deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+            <option value="4">db.Accion.deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
         </select>
 
-        <label for=""></label>
+        <label for="">Actualizar documento en una colección cambia el nombre por Transformers 2 en el primer documento
+            cuyo autor sea
+            Michael Bay</label>
         <select name="res4" id="res4">
-            <option value="1"></option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
+            <option value="1">db.Accion.update({ autor: "Michael Bay"},{$set:{ nombre: "Transformers 2" }})</option>
+            <option value="2">db.Accion.update()</option>
+            <option value="3">db.Accion.update({ {$set:{ nombre: "Transformers 2" }})</option>
+            <option value="4">db.Accion.update({ autor: "Michael Bay"},{$set:{ }})</option>
         </select>
 
-        <label for="">Actualizar varios documentos de una colección (puede filtrar uno o varios documentos) Actualiza
-            todos los documentos en el campo country por USA</label>
+        <label for="">Actualizar varios documentos de una colección (puede filtrar uno o varios documentos con
+            updateMany) Actualiza
+            todos los documentos en el campo nombre por Titanes</label>
         <select name="res5" id="res5">
-            <option value="1">db.band.updateMany({},{$set:{'country':'USA'}})</option>
-            <option value="2"></option>
-            <option value="3"></option>
-            <option value="4"></option>
+            <option value="1">db.Accion.updateMany({},{$set:{ nombre: "Titanes" }})</option>
+            <option value="2">db.update({},{$set:{ nombre: "Titanes" }})</option>
+            <option value="3">.update({},{$set:{ nombre: "Titanes" }})</option>
+            <option value="4">Titanes.updateMany({},{$set:{ nombre: "Titanes" }})</option>
         </select>
 
         <button type="submit" name="btn" id="btn">Enviar</button>
