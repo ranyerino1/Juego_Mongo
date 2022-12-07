@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>NIVEL AVANZADO</h1>
+
+    <p>En este nivel manipularas algunos de los operadores logicos con los que cuenta MongoDB y realizar una serie de
+        consultas mas avanzadas.</p>
+
+    <form action="" method="">
+
+        <label for="res1">Operador de igualdad $eq suponiendo que estamos en la coleccion libros busque un libro que el
+            nombre sea igual a Harry Potter</label>
+        <select name="res1" id="res1">
+            <option value="1">db.find({})</option>
+            <option value="2">libros.find({ })</option>
+            <option value="3">db.libros.find({ nombres:{$eq:"Harry Potter" }})</option>
+            <option value="4">db.libros({ nombres:{$eq:"Harry Potter" }).find()</option>
+        </select>
+
+        <label for="res2">Operador de mayor que suponiendo que estamos en la coleccion libros busque un libro donde el
+            precion sea mayor que 20.000</label>
+        <select name="res2" id="res2">
+            <option value="1">db.libros.find({ precio:{$gt:20.000} })</option>
+            <option value="2">libros.find()</option>
+            <option value="3">db.find({ precio:{$gt:20.000} })</option>
+            <option value="4">libros.find({ precio:{$gt:20.000} })</option>
+        </select>
+
+        <label for="res3">Operador $gte y $lte suponiendo que estamos en la coleccion Autores donde esta guardado año de
+            nacimiento(Anac), Año de fallecimiento(Afa) y nombre busque las fechas de nacimiento de los autores que
+            estre entre el rango de 1950 a 1970</label>
+        <select name="res3" id="res3">
+            <option value="1">find({ Anac:{$gte:1950, $lte:1970} })</option>
+            <option value="2">db.Autores.find({ Anac:{$gte:1950, $lte:1970} })</option>
+            <option value="3">db.find({ Anac:{$gte:1950, $lte:1970} })</option>
+            <option value="4">Autores.find({ Anac:{$gte:1950, $lte:1970} })</option>
+        </select>
+
+        <label for="res4">Con el mismo caso busque los Autores que no esten vivos</label>
+        <select name="res4" id="res4">
+            <option value="1">Autores.find({ Afa:{$ne:"vivo"} })</option>
+            <option value="2">db.find({ })</option>
+            <option value="3">find({ Afa:{$ne:"vivo"} })</option>
+            <option value="4">db.Autores.find({ Afa:{$ne:"vivo"} })</option>
+        </select>
+
+        <label for="res5">Con el mismo caso busque los Autores que su fecha de nacimiento sea menor a 1950</label>
+        <select name="res5" id="res5">
+            <option value="1">.find({ Anac:{$lt:1950} })</option>
+            <option value="2">Autores.find({ Anac:{$lt:1950} })</option>
+            <option value="3">db.Autores.find({ Anac:{$lt:1950} })</option>
+            <option value="4">db..find({ Anac:{$lt:1950} })</option>
+        </select>
+
+        <button type="submit" name="btn" id="btn">Enviar</button>
+
+    </form>
+
+    <a href="FormIntermedio.html">Regresar Nivel</a>
+    <a href="#">Ejecutar Consola MongoDB</a>
+
+    <script src="FormAvanzado.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

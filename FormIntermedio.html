@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>NIVEL INTERMEDIO</h1>
+
+    <p>En este nivel aprenderas a usar actualizaciones y consultas por datos en especifico.</p>
+
+    <div class="">
+
+        <label for="">Si se desea ver todos los documentos insertados que cumplan con un criterio, lo unico que debemos
+            hacer es especificar el dato a usar, si queremos consultar todas las peliculas cuyo autor sea Michael Bay
+            como lo hariamos.</label>
+        <select name="res1" id="res1">
+            <option value="1">Accion.find({ nombre:"Michael Bay" })</option>
+            <option value="2">find({ nombre:"Michael Bay" })</option>
+            <option value="3">db.Accion.find({ nombre:"Michael Bay" })</option>
+            <option value="4">db.find({ nombre:"Michael Bay" })</option>
+        </select>
+
+        <label for="">Para ver los dcoumentos ordenados basta con usar el metodo .pretty(), si deseamos ver la anterior
+            consulta ordenada que debemos agregar.</label>
+        <select name="res2" id="res2">
+            <option value="1">Accion.find({ nombre:"Michael Bay" }).pertty</option>
+            <option value="2">db.Accion.find({ nombre:"Michael Bay" }).pretty()</option>
+            <option value="3">db.Accion.find({ nombre:"Michael Bay" })</option>
+            <option value="4">db.find({ nombre:"Michael Bay" }).pretty()</option>
+        </select>
+
+        <label for=""></label>
+        <select name="res3" id="res3">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+        </select>
+
+        <label for=""></label>
+        <select name="res4" id="res4">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+        </select>
+
+        <label for="">Actualizar varios documentos de una colección (puede filtrar uno o varios documentos) Actualiza
+            todos los documentos en el campo country por USA</label>
+        <select name="res5" id="res5">
+            <option value="1">db.band.updateMany({},{$set:{'country':'USA'}})</option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+        </select>
+
+        <button type="submit" name="btn" id="btn">Enviar</button>
+
+    </div>
+
+    <a href="FormPrincipiante.html">Regresar Nivel</a>
+    <a href="FormAvanzado.html">Siguiente Nivel</a>
+
+    <script src="FormIntermedio.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>

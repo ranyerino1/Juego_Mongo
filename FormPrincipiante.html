@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>NIVEL PRINCIPIANTE</h1>
+
+    <p>En este nivel Aprenderas a usar los comandos basicos de la consola de MongoDB y sobre todo a generar bases de
+        datos, documentos, colecciones, consultas entre otas.</p>
+
+    <div class="">
+
+        <label for="">Para crear una base de datos en MongoDB hay que usar, con la sentencia use, una base de datos
+            o colección que todavía no existe. ¿Si se desae crear una base datos con el nombre "peliculas" como lo
+            harias?</label>
+        <select id="res1">
+            <option value="1">use peliculas;</option>
+            <option value="2">peliculas use;</option>
+            <option value="3">use database peliculas;</option>
+            <option value="4">database peliculas use;</option>
+        </select>
+
+        <label for="">Basados en la base de datos creada anteriormente, si se desea crear una coleccion dentro de
+            ella necesitamos usar el metodo createCollection("Nombre_Colección").
+            ¿Para poder crear la colección llamada "Accion" como lo implementariamos?
+        </label>
+        <select id="res2">
+            <option value="1">db.createCollection(Accion);</option>
+            <option value="2">create("Accion");</option>
+            <option value="3">db.createCollection("Accion");</option>
+            <option value="4">create.db.Collection("Accion");</option>
+        </select>
+
+        <label for="">Siguiendo por la misma linea de la coleccion anteriormente creada, para poder insertar un
+            documento en el cuerpo bastara con usar la sentencia .insert({}), si deseamos insertar un documento en la
+            colección que sentencia usarias.</label>
+        <select id="res3">
+            <option value="1">.insert()</option>
+            <option value="2">.insert.Accion({ nombre: "Transformers", autor: "Michael Bay" })</option>
+            <option value="3">bb.insert({ nombre: "Transformers", autor: "Michael Bay" })</option>
+            <option value="4">db.Accion.insert({ nombre: "Transformers", autor: "Michael Bay" })</option>
+        </select>
+
+        <label for="">Para realizar una eliminación de una coleccion debemos implementar el metodo .drop(), si
+            necesitamos eliminar la coleccion "Accion" que estructura debemos implementar</label>
+        <select id="res4">
+            <option value="1">db.Accion.drop();</option>
+            <option value="2">drop.Acccion();</option>
+            <option value="3">db.drop.Accion;</option>
+            <option value="4">Accion.drop();</option>
+        </select>
+
+        <label for="">El metodo .find() nos sirve para consultar datos de nuestra base de datos.
+            ¿Si se quieren consultar los datos insertados en la coleccion de "Accion" como lo harias?
+        </label>
+        <select id="res5">
+            <option value="1">.find(Accion);</option>
+            <option value="2">db.Accion.find();</option>
+            <option value="3">find.db.Accion;</option>
+            <option value="4">Accion.find();</option>
+        </select>
+
+        <button type="submit" id="btn">Enviar</button>
+
+    </div>
+
+    <a href="FormIntermedio.html">Siguiente Nivel</a>
+
+    <script src="FormPrincipiante.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+
+</html>
