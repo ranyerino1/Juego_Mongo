@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+      />
+      <link
+        href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+        rel="stylesheet"
+      />
+
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style2.css">
+    <title>Nivel intermedio</title>
+</head>
+
+<body>
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="">
+        </a>
+    
+        <nav class="navbar">
+           <a href="/">Volver al inicio</a> 
+           <a href="FormPrincipiante.html">Volver al nivel anterior</a> 
+        </nav>
+    
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    
+    
+    </header>
+    <br><br><br>
+
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>NIVEL </span> INTERMEDIO </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/about-img.jpeg" alt="">
+        </div>
+        <div class="content" id="apartado1">
+            <h3>MongoDB </h3>
+            <p>En este nivel Aprenderas a usar los comandos basicos de la consola de MongoDB y sobre todo a generar bases de
+                datos, documentos, colecciones, consultas entre otas.</p>
+                
+              <button
+              class="btn btn-success btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#enroll"
+            >
+              Ver evaluación
+            </button>
+            <a href="/avanzado"> <button
+            class="btn btn-success btn-lg"
+          >
+           Pasar al Siguiente nivel
+          </button></a>
+        </div>
+    </div>
+</section>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="enroll"
+        tabindex="-1"
+        aria-labelledby="enrollLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="enrollLabel">Evaluación</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                    <label for="" class="lead">Si se desea ver todos los documentos insertados que cumplan con un criterio, lo unico que debemos
+                        hacer es especificar el dato a usar, si queremos consultar todas las peliculas cuyo autor sea Michael Bay
+                        como lo hariamos.</label>
+                    <select name="res1" id="res1" class="form-control">
+                        <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">Accion.find({ autor:"Michael Bay" })</option>
+                        <option value="2" class="lead">find({ autor:"Michael Bay" })</option>
+                        <option value="3" class="lead">db.Accion.find({ autor:"Michael Bay" })</option>
+                        <option value="4" class="lead">db.find({ autor:"Michael Bay" })</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Para ver los dcoumentos ordenados basta con usar el metodo .pretty(), si deseamos ver la anterior
+                        consulta ordenada que debemos agregar.</label>
+                    <select name="res2" id="res2" class="form-control">
+                        <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">Accion.find({ autor:"Michael Bay" }).pertty</option>
+                        <option value="2" class="lead">db.Accion.find({ autor:"Michael Bay" }).pretty()</option>
+                        <option value="3" class="lead">db.Accion.find({ autor:"Michael Bay" })</option>
+                        <option value="4" class="lead">db.find({ autor:"Michael Bay" }).pretty()</option>
+                    </select>
+            
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Para realizar una eliminación basta con usar deleteOne y buscar un dato especifico, elimina el
+                        documento que cumpla con la condición de _id':ObjectId("6168e897b7fbfc75868973ea")
+                    </label>
+                    <select name="res3" id="res3" class="form-control">
+                        <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+                        <option value="2" class="lead">db.Drop({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+                        <option value="3" class="lead">db.deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+                        <option value="4" class="lead">db.Accion.deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Actualizar documento en una colección cambia el nombre por Transformers 2 en el primer documento
+                        cuyo autor sea
+                        Michael Bay</label>
+                    <select name="res4" id="res4" class="form-control">
+                        <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">db.Accion.update({ autor: "Michael Bay"},{$set:{ nombre: "Transformers 2" }})</option>
+                        <option value="2" class="lead">db.Accion.update()</option>
+                        <option value="3" class="lead">db.Accion.update({ {$set:{ nombre: "Transformers 2" }})</option>
+                        <option value="4" class="lead">db.Accion.update({ autor: "Michael Bay"},{$set:{ }})</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Actualizar varios documentos de una colección (puede filtrar uno o varios documentos con
+                        updateMany) Actualiza
+                        todos los documentos en el campo nombre por Titanes</label>
+                    <select name="res5" id="res5" class="form-control">
+                        <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">db.Accion.updateMany({},{$set:{ nombre: "Titanes" }})</option>
+                        <option value="2" class="lead">db.update({},{$set:{ nombre: "Titanes" }})</option>
+                        <option value="3" class="lead">.update({},{$set:{ nombre: "Titanes" }})</option>
+                        <option value="4" class="lead">Titanes.updateMany({},{$set:{ nombre: "Titanes" }})</option>
+                    </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+                id="btn"
+              >
+                Verificar respuestas
+              </button>
+            <!-- <button type="submit" id="btn">Enviar</button> --> 
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+  
+      <script>
+        mapboxgl.accessToken =
+          'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [-71.060982, 42.35725],
+          zoom: 18,
+        })
+      </script>
+
+    
+    <script src="js/inicio.js"></script>
+    <script src="./js/Intermedio.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="sweetAlert.js"></script>
+
+</body>
+
+</html>
