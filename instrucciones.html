@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrucciones MongoDB</title>
+
+     <!-- font awesome cdn link  -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="#" class="logo">
+            <img src="images/logo.png" alt="">
+        </a>
+    
+        <nav class="navbar">
+           <a href="index.html"> <b>Volver al inicio</b> </a> 
+           <a href="FormPrincipiante.html"> <b>Realizar evaluación</b> </a> 
+        </nav>
+    
+        <div class="icons">
+            <div class="fas fa-bars" id="menu-btn"></div>
+        </div>
+    
+    
+    </header>
+
+    <br><br><br>
+    <section class="about" id="about">
+        <br><br><br><br>
+
+        <div class="row">
+
+
+            <div class="content" id="apartado1">
+                <h3>Comandos básicos</h3>
+                <p>
+
+                    <b>1) </b> Crear base de datos llamada musica <br>
+                    --------- <b>use musica</b>
+                    <br>
+                    <b>2) </b> Crear colección band <br>
+                    --------- <b> db.createCollection("band")</b>
+                    <br>
+                    <b>3) </b> Agregar un documento a la colección band<br>
+                    --------- <b> db.band.insert({name:"Bon Jovi",country: "Estados Unidos de América"})</b>
+                    <br>
+                    <b>4) </b> Agregar varios documentos a la colección band<br>
+                    --------- <b> db.band.insert([
+                        {name:"Bon Jovi",country: "Estados Unidos de América"},
+                        {name:"Guns & Roses",country: "Estados Unidos de América"}
+                        ])
+                    </b>
+                    <br>
+                    <b>5) </b> Ver todos los documentos insertados<br>
+                    --------- <b> db.band.find() </b>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="row">
+
+
+            <div class="content" id="apartado1">
+                <h3>Comandos básicos</h3>
+                <p>
+
+                    <b>6) </b> Ver todos los documentos insertados con pretty<br>
+                    --------- <b>db.band.find().pretty()</b>
+                    <br>
+                    <b>7) </b>Ver todos los documentos insertados que cumplan con un criterio<br>
+                    --------- <b>db.band.find({name:"Bon Jovi"})</b>
+                    <br>
+                    <b>8) </b>Ver todos los documentos insertados con pretty que cumplan con un criterio<br>
+                    --------- <b>db.band.find({country:'Estados Unidos de América'}).pretty()</b>
+                    <br>
+                    <b>9) </b> Ver solo el primer documento insertado que cumpla con un criterio (findOne no admite
+                    pretty())<br>
+                    --------- <b>db.band.findOne({'country':'Estados Unidos de América'})</b>
+                    <br>
+                    <b>10) </b>Ver todos los documentos insertados que cumplan con dos criterios<br>
+                    --------- <b>db.band.find({'country':'Estados Unidos de América','album.title':'Appetite for
+                        Destruction'}).pretty()</b>
+
+                </p>
+
+            </div>
+
+            <div class="image">
+                <img src="images/cart-item-1.png">
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="row">
+
+            <div class="content" id="apartado1">
+                <h3>Comandos básicos</h3>
+                <p>
+
+                    <b>11) </b>Ver campos específicos de documentos que cumplan con criterio especificado (1 muestra el
+                    campo y 0
+                    oculta el campo)<br>
+                    --------- <b>db.band.find({'country':'Estados Unidos de
+                        América'},{'album.title':1,'dateCreated':1})</b>
+                    <br>
+                    <b>12) </b> Ver campos específicos de documentos que cumplan con criterio especificado, omitiendo
+                    id<br>
+                    --------- <b>db.band.find({'country':'Estados Unidos de
+                        América'},{'album.title':1,'dateCreated':1,'_id':0})</b>
+                    <br>
+                    <b>13) </b> Ordenar ascendentemente (1) descendentemente (-1)<br>
+                    --------- <b>db.band.find({'country':'Estados Unidos de América'}).sort({'name':1}).pretty()</b>
+                    <br>
+                    <b>14) </b> Actualizar documento en una colección Cambia el país por USA en el primer documento cuyo
+                    nombre sea
+                    Bon Jovi<br>
+                    --------- <b>db.band.update({'name':'Bon Jovi'},{$set:{'country':'USA'}})</b>
+                    <br>
+                    <b>15) </b> Actualizar varios documentos de una colección (puede filtrar uno o varios documentos)
+                    Actualiza
+                    todos los documentos en el campo country por USA<br>
+                    --------- <b>db.band.updateMany({},{$set:{'country':'USA'}})</b>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about" id="about">
+
+        <div class="row">
+
+
+            <div class="content" id="apartado1">
+                <h3>Comandos básicos</h3>
+                <p>
+
+                    <b>16) </b> Verificar cambio<br>
+                    --------- <b>db.band.find({'country':'USA'}).sort({'name':-1}).pretty()</b>
+                    <br>
+                    <b>17) </b> Eliminar documento que cumpla con la condición<br>
+                    --------- <b>db.band.deleteOne({'_id':ObjectId("6168e897b7fbfc75868973ea")})</b>
+                    <br>
+                    <b>18) </b> Borrar colección<br>
+                    --------- <b>db.band.drop()</b>
+                    <br>
+                    <b>19) </b> Borrar bd. Si no hay colecciones: Verificar bd con<br>
+                    --------- <b>db</b>
+                    <br>
+                    <b>20) </b> Seleccionar bd si está en otra<br>
+                    --------- <b>use bandasrock</b>
+                    <br>
+                    <b>21) </b> Borrar base seleccionada<br>
+                    --------- <b>db.dropDatabase()</b>
+                    <br>
+                    <b>22) </b>para verificar<br>
+                    --------- <b>show dbs</b>
+
+                </p>
+
+            </div>
+
+            <div class="image">
+                <img src="images/cart-item-2.png" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="footer">
+
+        <div class="credit"> <b>created by <span>Milena</span> | Jorge | Daniel</b> </div>
+
+    </section>
+
+    <!-- footer section ends -->
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="js/sweetAlert2.js"></script>
+
+</body>
+
+</html>

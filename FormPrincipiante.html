@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- font awesome cdn link  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+      />
+      <link
+        href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css"
+        rel="stylesheet"
+      />
+
+        <!-- custom css file link  -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/style2.css">
+    <title>Nivel principiante</title>
+</head>
+
+<body>
+  <header class="header">
+
+    <a href="#" class="logo">
+        <img src="images/logo.png" alt="">
+    </a>
+
+    <nav class="navbar">
+       <a href="index.html">Volver al inicio</a> 
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+    </div>
+
+
+</header>
+<br><br><br>
+<section class="about" id="about">
+
+    <h1 class="heading"> <span>NIVEL </span> PRINCIPIANTE </h1>
+
+    <div class="row">
+
+        <div class="image">
+            <img src="images/about-img.jpeg" alt="">
+        </div>
+        <div class="content" id="apartado1">
+            <h3>MongoDB </h3>
+            <p>En este nivel Aprenderas a usar los comandos basicos de la consola de MongoDB y sobre todo a generar bases de
+                datos, documentos, colecciones, consultas entre otas.</p>
+                
+              <button
+              class="btn btn-success btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#enroll"
+            >
+              Ver evaluación
+            </button>
+            <a href="FormIntermedio.html"> <button
+            class="btn btn-success btn-lg"
+          >
+           Pasar al Siguiente nivel
+          </button></a>
+        </div>
+    </div>
+</section>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="enroll"
+        tabindex="-1"
+        aria-labelledby="enrollLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="enrollLabel">Evaluación</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="mb-3">
+                    <label for="" class="lead">Para crear una base de datos en MongoDB hay que usar, con la sentencia use, una base de datos
+                        o colección que todavía no existe. ¿Si se desae crear una base datos con el nombre "peliculas" como lo
+                        harias?</label>
+                    <select id="res1" class="form-control">
+                      <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">use peliculas;</option>
+                        <option value="2" class="lead">peliculas use;</option>
+                        <option value="3" class="lead">use database peliculas;</option>
+                        <option value="4" class="lead">database peliculas use;</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Basados en la base de datos creada anteriormente, si se desea crear una coleccion dentro de
+                        ella necesitamos usar el metodo createCollection("Nombre_Colección").
+                        ¿Para poder crear la colección llamada "Accion" como lo implementariamos?
+                    </label>
+                    <select id="res2" class="form-control">
+                      <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">db.createCollection(Accion);</option>
+                        <option value="2" class="lead">create("Accion");</option>
+                        <option value="3" class="lead">db.createCollection("Accion");</option>
+                        <option value="4" class="lead">create.db.Collection("Accion");</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                  <label for="">Siguiendo por la misma linea de la coleccion anteriormente creada, para poder insertar un
+                    documento en el cuerpo bastara con usar la sentencia .insert({}), si deseamos insertar un documento en la
+                    colección que sentencia usarias.</label>
+                    <select id="res3" class="form-control">
+                    <option value="1" class="lead">.insert()</option>
+                    <option value="2" class="lead">.insert.Accion({ nombre: "Transformers", autor: "Michael Bay" })</option>
+                    <option value="3" class="lead">bb.insert({ nombre: "Transformers", autor: "Michael Bay" })</option>
+                    <option value="4" class="lead">db.Accion.insert({ nombre: "Transformers", autor: "Michael Bay" })</option>
+                </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">Para realizar una eliminación de una coleccion debemos implementar el metodo .drop(), si
+                        necesitamos eliminar la coleccion "Accion" que estructura debemos implementar</label>
+                    <select id="res4" class="form-control">
+                      <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">db.Accion.drop();</option>
+                        <option value="2" class="lead">drop.Acccion();</option>
+                        <option value="3" class="lead">db.drop.Accion;</option>
+                        <option value="4" class="lead">Accion.drop();</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="" class="lead">El metodo .find() nos sirve para consultar datos de nuestra base de datos.
+                        ¿Si se quieren consultar los datos insertados en la coleccion de "Accion" como lo harias?
+                    </label>
+                    <select id="res5" class="form-control">
+                      <option value="" class="lead">Selecciona unas respuesta...</option>
+                        <option value="1" class="lead">.find(Accion);</option>
+                        <option value="2" class="lead">db.Accion.find();</option>
+                        <option value="3" class="lead">find.db.Accion;</option>
+                        <option value="4" class="lead">Accion.find();</option>
+                    </select>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-success"
+                data-bs-dismiss="modal"
+                id="btn"
+              >
+                Verificar respuestas
+              </button>
+            <!-- <button type="submit" id="btn">Enviar</button> --> 
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"
+      ></script>
+      <script src="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js"></script>
+  
+      <script>
+        mapboxgl.accessToken =
+          'pk.eyJ1IjoiYnRyYXZlcnN5IiwiYSI6ImNrbmh0dXF1NzBtbnMyb3MzcTBpaG10eXcifQ.h5ZyYCglnMdOLAGGiL1Auw'
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/mapbox/streets-v11',
+          center: [-71.060982, 42.35725],
+          zoom: 18,
+        })
+      </script>
+
+    
+    <script src="js/script.js"></script>
+    <script src="./js/FormPrincpiante.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="./js/sweetAlert.js"></script>
+
+</body>
+
+</html>
